@@ -10,7 +10,11 @@ const Students = ({ students }) => {
     dispatch({ type: actionTypes.ALL_STUDENTS_REQUEST });
   }, [dispatch]);
 
-  return <StudentsTable students={students} />;
+  return (
+    <div className="min-vh-100 d-flex justify-content-center">
+      <StudentsTable students={students} />
+    </div>
+  );
 };
 
 const mapStateToProps = (state) => {

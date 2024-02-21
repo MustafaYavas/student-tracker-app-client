@@ -1,0 +1,24 @@
+.students {
+  margin-top: 72px;
+
+  .table-actions {
+    &-button {
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .view {
+      background-color: #0dcaf0;
+    }
+
+    .update {
+      background-color: #00f729;
+    }
+
+    .delete {
+      background-color: #ff0000;
+    }
+  }
+}
