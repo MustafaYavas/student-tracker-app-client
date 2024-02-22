@@ -1,8 +1,16 @@
 import { Table, Button } from 'react-bootstrap';
 import styles from './StudentsTable.module.scss';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import * as actionTypes from '../../redux/actionTypes';
 
 const StudentsTable = ({ students }) => {
+  const dispatch = useDispatch();
+
+  const handleDelete = (id) => {
+    dispatch({ type: actionTypes.STUDENT_DELETE_REQUEST, payload: id });
+  };
+
   return (
     <div className={styles.students}>
       {students?.length === 0 ? (
@@ -51,12 +59,13 @@ const StudentsTable = ({ students }) => {
                     >
                       Update
                     </NavLink>
-                    <NavLink
+                    <button
                       title="Delete student"
                       className={`${styles['table-actions-button']} ${styles.delete}`}
+                      onClick={() => handleDelete(student.id)}
                     >
                       Delete
-                    </NavLink>
+                    </button>
                   </td>
                 </tr>
               ))}

@@ -43,6 +43,20 @@ export const StudentsReducer = (state = initialState, action) => {
       ...state,
       error: payload,
     };
+  } else if (type === actionTypes.STUDENT_DELETE_DATA) {
+    let newStudents = state.allStudents.filter(
+      (student) => student.id !== payload
+    );
+
+    return {
+      ...state,
+      allStudents: newStudents,
+    };
+  } else if (type === actionTypes.STUDENT_DELETE_ERROR) {
+    return {
+      ...state,
+      error: payload,
+    };
   } else {
     return state;
   }

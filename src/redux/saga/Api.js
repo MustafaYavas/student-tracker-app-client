@@ -36,3 +36,13 @@ export const handleUpdateStudent = async (payload) => {
     throw new Error(error);
   }
 };
+
+export const handleDeleteStudent = async (id) => {
+  try {
+    await fetch(`http://localhost:8080/api/students/${id}`, {
+      method: 'DELETE',
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
