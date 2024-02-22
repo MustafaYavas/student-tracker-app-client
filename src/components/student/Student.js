@@ -24,9 +24,12 @@ const Student = ({ singleStudent }) => {
                 {singleStudent?.departments}
               </span>
             </Card.Text>
-            <NavLink className={styles['card-link']} to="/students">
-              See all students
-            </NavLink>
+            <div className="d-flex justify-content-between align-items-center mt-5">
+              <NavLink to="/students">See all students</NavLink>
+              <NavLink to={`/students/update/${singleStudent?.id}`}>
+                Update the student
+              </NavLink>
+            </div>
           </Card.Body>
         </Card>
       </div>

@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Students from './pages/Students';
 import RootLayout from './pages/Root';
 import SingleStudent from './pages/SingleStudent';
+import UpdateStudentPage from './pages/UpdateStudentPage';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: '/students/:id',
         element: <SingleStudent />,
+      },
+      {
+        path: '/students/update/:id',
+        element: <UpdateStudentPage />,
       },
     ],
   },

@@ -29,6 +29,20 @@ export const StudentsReducer = (state = initialState, action) => {
       ...state,
       error: payload,
     };
+  } else if (type === actionTypes.STUDENT_UPDATE_DATA) {
+    let newStudents = state.allStudents.map((student) =>
+      student.id === payload.id ? { ...state.allStudents, ...payload } : student
+    );
+
+    return {
+      ...state,
+      allStudents: newStudents,
+    };
+  } else if (type === actionTypes.STUDENT_UPDATE_ERROR) {
+    return {
+      ...state,
+      error: payload,
+    };
   } else {
     return state;
   }
