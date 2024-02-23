@@ -47,6 +47,7 @@ const UpdateStudent = ({ singleStudent }) => {
 
   return (
     <div className="w-50">
+      <p class="fs-3 text-decoration-underline">Update Student</p>
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>First name</Form.Label>

@@ -1,12 +1,13 @@
 import styles from './MainNavbar.module.scss';
 import { NavLink } from 'react-router-dom';
+import logo from '../../assets/logo.png';
 
 const MainNavbar = () => {
   return (
     <div className={styles['main-navbar']}>
-      <div>
-        <span>logo</span>
-      </div>
+      <NavLink to="/">
+        <img src={logo} alt="logo" width={36} />
+      </NavLink>
 
       <div className={styles['navbar-links']}>
         <NavLink to="/">

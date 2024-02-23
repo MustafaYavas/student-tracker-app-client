@@ -5,6 +5,9 @@
   height: 72px;
   padding: 32px;
   border-bottom: 1px solid #b9b9b9;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   .navbar-links {
     a {

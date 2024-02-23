@@ -6,7 +6,7 @@ const Student = ({ singleStudent }) => {
   return (
     <div className="d-flex flex-column justify-content-center align-items-center row">
       <div className="col-12 col-md-4">
-        <p className="fs-3">Student Info</p>
+        <p class="fs-3 text-decoration-underline">Student Info</p>
         <Card className={`${styles['student-card']} `}>
           <Card.Body>
             <Card.Title className="d-flex justify-content-between align-items-center">

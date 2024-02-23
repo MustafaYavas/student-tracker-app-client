@@ -11,7 +11,8 @@ const Students = ({ students }) => {
   }, [dispatch]);
 
   return (
-    <div className="min-vh-100 d-flex justify-content-center">
+    <div className="d-flex flex-column justify-content-center">
+      <p class="fs-3">All Students</p>
       <StudentsTable students={students} />
     </div>
   );
