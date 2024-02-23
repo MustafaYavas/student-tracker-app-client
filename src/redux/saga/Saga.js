@@ -1,6 +1,7 @@
 import * as actionTypes from '../actionTypes';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import {
+  handleAddStudent,
   handleDeleteStudent,
   handleGetStudent,
   handleGetStudents,
@@ -47,9 +48,19 @@ export const deleteStudent = function* ({ payload }) {
   }
 };
 
+export const addStudent = function* ({ payload }) {
+  try {
+    yield call(handleAddStudent, payload);
+    yield put(actionData(actionTypes.STUDENT_ADD_DATA, payload));
+  } catch (error) {
+    yield put(actionData(actionTypes.STUDENT_ADD_ERROR, error));
+  }
+};
+
 const Saga = function* () {
   yield takeLatest(actionTypes.ALL_STUDENTS_REQUEST, getAllStudents);
   yield takeLatest(actionTypes.SINGLE_STUDENT_REQUEST, getSingleStudent);
+  yield takeLatest(actionTypes.STUDENT_ADD_REQUEST, addStudent);
   yield takeLatest(actionTypes.STUDENT_UPDATE_REQUEST, updateStudent);
   yield takeLatest(actionTypes.STUDENT_DELETE_REQUEST, deleteStudent);
 };

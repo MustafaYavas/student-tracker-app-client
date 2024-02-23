@@ -1,4 +1,4 @@
-import { Table, Button } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import styles from './StudentsTable.module.scss';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -16,7 +16,9 @@ const StudentsTable = ({ students }) => {
       {students?.length === 0 ? (
         <div className="d-flex flex-column justify-content-center align-items-center">
           <h3>No Students found!</h3>
-          <Button className="mt-3 px-5">Add</Button>
+          <NavLink className={`${styles.add} mt-5`} to="/students/add">
+            Add a student
+          </NavLink>
         </div>
       ) : (
         <section>

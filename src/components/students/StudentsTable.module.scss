@@ -20,4 +20,17 @@
       border: none;
     }
   }
+
+  .add {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #0025f7;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #2646f8;
+    }
+  }
 }

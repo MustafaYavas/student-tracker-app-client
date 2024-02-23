@@ -14,7 +14,11 @@ const MainNavbar = () => {
         </NavLink>
 
         <NavLink to="/students">
-          <span className="ms-3">Students</span>
+          <span className="mx-5">Students</span>
+        </NavLink>
+
+        <NavLink to="/students/add">
+          <span>Add new student</span>
         </NavLink>
       </div>
     </div>

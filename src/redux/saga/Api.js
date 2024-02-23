@@ -18,6 +18,20 @@ export const handleGetStudent = async (id) => {
   }
 };
 
+export const handleAddStudent = async (payload) => {
+  try {
+    const response = await fetch(`http://localhost:8080/api/students`, {
+      method: 'POST',
+      body: JSON.stringify(payload),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 export const handleUpdateStudent = async (payload) => {
   try {
     const response = await fetch(
